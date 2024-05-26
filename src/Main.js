@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "./Card";
+import config from "./config.json";
 
 export const Main = () => {
   const [data, setData] = useState(null);
   const [search, setSearch] = useState("");
   const [url, setUrl] = useState(
-    "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=9b3fdd6b19f60730f155e3b892f43a57&hash=1665b0436d5d2122ca09a429b48304d6"
+    `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${config.MARVEL_API_KEY}&hash=${config.MARVEL_HASH}`
   );
 
   useEffect(() => {
@@ -24,16 +25,15 @@ export const Main = () => {
 
   const searchMarvel = () => {
     setUrl(
-      `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=9b3fdd6b19f60730f155e3b892f43a57&hash=1665b0436d5d2122ca09a429b48304d6`
+      `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=${config.MARVEL_API_KEY}&hash=${config.MARVEL_HASH}`
     );
   };
 
-  const fetchRandomCharacter = async () => {
+  const fetchRandomCharacter = () => {
     const randomOffset = Math.floor(Math.random() * 1493); // There are 1493 characters in the Marvel API
-    const randomUrl = `https://gateway.marvel.com/v1/public/characters?limit=1&offset=${randomOffset}&ts=1&apikey=9b3fdd6b19f60730f155e3b892f43a57&hash=1665b0436d5d2122ca09a429b48304d6`;
+    const randomUrl = `https://gateway.marvel.com/v1/public/characters?limit=1&offset=${randomOffset}&ts=1&apikey=${config.MARVEL_API_KEY}&hash=${config.MARVEL_HASH}`;
     setUrl(randomUrl);
   };
-
   return (
     <>
       <div className="header">

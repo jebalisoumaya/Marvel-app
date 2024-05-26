@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import config from "./config.json";
 
 export const Marvel = () => {
   const { id } = useParams();
@@ -11,14 +12,14 @@ export const Marvel = () => {
       try {
         // Fetch character data
         const characterResponse = await fetch(
-          `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=9b3fdd6b19f60730f155e3b892f43a57&hash=1665b0436d5d2122ca09a429b48304d6`
+          `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=${config.MARVEL_API_KEY}&hash=${config.MARVEL_HASH}`
         );
         const characterResult = await characterResponse.json();
         setItem(characterResult.data.results[0]);
 
         // Fetch comics data related to the character
         const comicsResponse = await fetch(
-          `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=1&apikey=9b3fdd6b19f60730f155e3b892f43a57&hash=1665b0436d5d2122ca09a429b48304d6`
+          `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=1&apikey=${config.MARVEL_API_KEY}&hash=${config.MARVEL_HASH}`
         );
         const comicsResult = await comicsResponse.json();
         setComics(comicsResult.data.results);
