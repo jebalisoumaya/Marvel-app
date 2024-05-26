@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Marvel assemble App
 Marvel assemble app (using Marvel api)
 In marvel assemble app you can search for your favorites, view detailed character descriptions, and discover related comics. Feeling adventurous? Use the Random Marvel Character Generator for a surprise encounter. 
 
