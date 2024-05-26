@@ -66,7 +66,7 @@ export const Main = () => {
           className="random-character-btn "
           onClick={fetchRandomCharacter}
         >
-          Unleash the random! Click!
+          Unleash the random! Click if you dare!
         </button>
         {!data ? <p>Loading...</p> : <Card data={data} />}
       </div>
