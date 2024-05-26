@@ -1,4 +1,18 @@
 # Getting Started with Create React App
+Marvel assemble app (using Marvel api)
+In marvel assemble app you can search for your favorites, view detailed character descriptions, and discover related comics. Feeling adventurous? Use the Random Marvel Character Generator for a surprise encounter. 
+
+To run the project you need to :
+1. npm install
+2. Create a config.json in src and include your API key and hash to be able to fetch data from the marvel API
+   {
+  "MARVEL_API_KEY": "",
+  "MARVEL_HASH": ""
+   }
+then you can start 
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
